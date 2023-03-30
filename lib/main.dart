@@ -1,11 +1,13 @@
-import 'package:dicoding_flutter_news/article.dart';
-import 'package:dicoding_flutter_news/news_detail_page.dart';
-import 'package:dicoding_flutter_news/news_webview.dart';
+import 'package:dicoding_flutter_news/data/model/article.dart';
+import 'package:dicoding_flutter_news/ui/news_detail_page.dart';
+import 'package:dicoding_flutter_news/ui/news_webview.dart';
+import 'package:fimber/fimber.dart';
 import 'package:flutter/material.dart';
 
-import 'news_list_page.dart';
+import 'ui/news_list_page.dart';
 
 void main() {
+  Fimber.plantTree(DebugTree());
   runApp(const MyApp());
 }
 

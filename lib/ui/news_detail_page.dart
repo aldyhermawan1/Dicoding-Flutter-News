@@ -1,7 +1,7 @@
-import 'package:dicoding_flutter_news/news_webview.dart';
+import 'package:dicoding_flutter_news/ui/news_webview.dart';
 import 'package:flutter/material.dart';
 
-import 'article.dart';
+import '../data/model/article.dart';
 
 class NewsDetailPage extends StatelessWidget {
   static const routeName = '/article_detail';
@@ -19,13 +19,13 @@ class NewsDetailPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.network(article.urlToImage),
+            Image.network(article.urlToImage ?? "https://via.placeholder.com/1920x1080?text=Image+not+found"),
             Padding(
               padding: const EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(article.description),
+                  Text(article.description ?? ""),
                   const Divider(color: Colors.grey),
                   Text(
                     article.title,
@@ -41,7 +41,7 @@ class NewsDetailPage extends StatelessWidget {
                   Text('Author: ${article.author}'),
                   const Divider(color: Colors.grey),
                   Text(
-                    article.content,
+                    article.content ?? "",
                     style: const TextStyle(fontSize: 16),
                   ),
                   const SizedBox(height: 10),
